@@ -1,0 +1,107 @@
+ALGORITHM probleme1_solution1
+VAR 
+    somme ,i ,j : INTEGER
+    tab1= ARRAY_OF INTEGER[4]
+    tab2 = ARRAY_OF INTEGER[5]
+BEGIN
+    tab1:= {3,1,7,9}
+    tab2:= {2,4,9,1,3}
+    FOR i FROM 0 TO tab1.length-1 STEP 1 DO 
+        WHILE ( J < tab2.length-1) DO
+            IF ( tab1[i] <> tab2[j]) THEN
+                somme= tab1[i]
+                BREAK
+            END_IF
+            J=J+1
+        END_WHILE
+    END_FOR
+    FOR j FROM 0 TO tab2.length-1 STEP 1 DO 
+        WHILE ( i < tab1.length-1) DO
+            IF ( tab2[j] <> tab1[i]) THEN
+                somme= tab2[j]
+                BREAK
+            END_IF
+            i=i+1
+        END_WHILE
+    END_FOR
+    READ(somme)
+END
+ALGORITHM probleme_solution2
+VAR
+    htab1: HASH_TABLE<INTEGER>;
+    htab2: HASH_TABLE<INTEGER>
+    count, i, j , count: INTEGER
+BEGIN
+    htab1.insert(0,3);
+    htab1.insert(1,1);
+    htab1.insert(2,7);
+    htab1.insert(3,9);
+    write(htab1)
+
+    htab2.insert(0,2);
+    htab1.insert(1,4);
+    htab1.insert(2,1);
+    htab1.insert(3,9);
+    htab1.insert(4,3);
+    write(htab2)
+    
+    FOR i FROM 0 TO htab1.length-1 STEP 1 DO
+        FOR J FROM 0 TO htab2.length-1 STEP 1 DO
+            IF(htab.lookup(htab1[i] = TRUE)) THEN
+                htab1.get(htab1[i])
+            END_IF
+            IF(htab2.lookup(htab2[j] = TRUE)) THEN
+                htab2.get(htab2[j])
+            END_IF
+            IF(htab1[i]<>htab2[j]) THEN
+                count=htab1[i]
+            END_IF
+              
+        END_FOR
+    END_FOR
+    FOR j FROM 0 TO htab2.length-1 STEP 1 DO
+        FOR i FROM 0 TO htab1.length-1 STEP 1 DO
+            IF(htab2.lookup(htab2[j] = TRUE)) THEN
+                htab2.get(htab2[j])
+            END_IF
+            IF(htab1.lookup(htab1[i] = TRUE)) THEN
+                htab1.get(htab1[i])
+            END_IF
+            IF(htab1[i]<>htab2[j]) THEN
+                count=htab2[j]
+            END_IF
+              
+        END_FOR
+    END_FOR
+    write(count)
+
+END
+
+ALGORITHM problem2
+VAR 
+    somme ,i ,j : INTEGER
+    tab1= ARRAY_OF INTEGER[4]
+    tab2 = ARRAY_OF INTEGER[5]
+BEGIN
+    tab1:= {3,1,7,9}
+    tab2:= {2,4,9,1,3}
+    FOR i FROM 0 TO tab1.length-1 STEP 1 DO 
+        WHILE ( J < tab2.length-1) DO
+            IF ( tab1[i] == tab2[j]) THEN
+                somme= tab1[i]
+                BREAK
+            END_IF
+            J=J+1
+        END_WHILE
+    END_FOR
+    FOR j FROM 0 TO tab2.length-1 STEP 1 DO 
+        WHILE ( i < tab1.length-1) DO
+            IF ( tab2[j] == tab1[i]) THEN
+                somme= tab2[j]
+                BREAK
+            END_IF
+            i=i+1
+        END_WHILE
+    END_FOR
+    READ(somme)
+END
